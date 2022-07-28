@@ -2,21 +2,23 @@ import java.util.Scanner;
 
 public class OBI {
    public static void main(String[] args) {
+      // https://olimpiada.ic.unicamp.br/pratique/pj/2008/f1/obi/
       Scanner in = new Scanner(System.in);
 
-      int n, p, x, y, cnt = 0;
-      n = in.nextInt();
-      p = in.nextInt();
+      int numeroCompetidores = in.nextInt();
+      int pontosMinimos = in.nextInt();
+      int competidoresConvidados = 0;
 
-      for (int i = 0; i < n; i++) {
-         x = in.nextInt();
-         y = in.nextInt();
-         if (x + y >= p) {
-            cnt++;
+      for (int i = 0; i < numeroCompetidores; i++) {
+         int ponto1 = in.nextInt();
+         int ponto2 = in.nextInt();
+
+         if (ponto1 + ponto2 >= pontosMinimos) {
+            competidoresConvidados++;
          }
       }
-      System.out.println(cnt);
 
+      System.out.println(competidoresConvidados);
       in.close();
    }
 }
